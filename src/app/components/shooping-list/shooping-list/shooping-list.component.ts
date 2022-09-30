@@ -9,6 +9,8 @@ import { Ingredient } from '../ingredient.model';
 export class ShoopingListComponent implements OnInit {
   ingredients: Ingredient[] = [new Ingredient('egg', 2)];
   constructor() {}
-
+  ingredientAdded(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
+  }
   ngOnInit(): void {}
 }
