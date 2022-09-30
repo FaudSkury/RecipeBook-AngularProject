@@ -1,9 +1,14 @@
-<app-header></app-header>
+<app-header
+  (featureSelect)="navSelected($event)"
+  (featureSelect)="navSelected($event)"
+></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shooping-list></app-shooping-list>
+      <app-recipes *ngIf="navigationSelect === 'recipe'"></app-recipes>
+      <app-shooping-list
+        *ngIf="navigationSelect === 'list'"
+      ></app-shooping-list>
     </div>
   </div>
 </div>
